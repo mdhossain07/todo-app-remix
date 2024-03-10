@@ -54,3 +54,10 @@
     text-overflow: ellipsis;
     width: 100%;
   }
+
+  .btn-actions{
+    display: flex;
+    background-color: 'purple';
+    padding: 10px 0;
+    gap: 10px
+  }

@@ -9,3 +9,9 @@ export function getTasks(){
 export function createTask(task){
     return prisma.tasks.create({data: task})
 }
+
+export function deleteTask(id){
+    return prisma.tasks.delete({
+        where : {id: parseInt(id)}
+    })
+}
