@@ -2,8 +2,10 @@
 import { Form } from "@remix-run/react";
 import styles from "../styles/noteList.css";
 
-const NoteList = ({ tasks }) => {
+const NoteList = ({ tasks, onUpdate }) => {
+
   return (
+    <>
     <ul id="note-list">
       {tasks?.map((task, index) => (
         <li key={task?.id} className="note">
@@ -31,12 +33,17 @@ const NoteList = ({ tasks }) => {
               <Form method="delete" action={`/notes?id=${task.id}`}>
                 <button type="submit">Delete</button>
               </Form>
-              <button>Update</button>
+              <button onClick={() => onUpdate(task)} >Update</button>
             </div>
           </article>
         </li>
       ))}
     </ul>
+
+    {}
+    
+    </>
+    
   );
 };
 
